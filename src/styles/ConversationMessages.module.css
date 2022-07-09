@@ -1,0 +1,23 @@
+.messages {
+    width: 100%;
+    height: calc(100% - 120px);
+    overflow: scroll;
+    position: absolute;
+    bottom: 60px;
+    top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 0 20px;
+    padding-bottom: 20px;
+}
+
+.inputConversation {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    padding: 0 20px;
+    padding-bottom: 10px;
+}

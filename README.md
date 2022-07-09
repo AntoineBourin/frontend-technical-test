@@ -1,71 +1,26 @@
-# Context :
+# Leboncoin technical test
 
-At leboncoin, our users can share messages about a transaction, or ask for informations about any products.
+This technical test goal was to create the interface to consult & send some messages.
 
-Your job is to create the interface to consult those messages.
-The interface needs to work on both desktop & mobile devices.
+## Stack
 
-In addition to your code, a README explaining your thought process and your choices would be appreciated.
+- React
+- Next.JS
+- Typescript
 
-# Exercice :
+## Methodology
 
-- Display a list of all the conversations
-- Allow the user to select a conversation
-  - Inside the conversation, there is a list of all the messages between these two users.
-  - As a user, you can type and send new messages in this conversation
+Atomic design has been used inside this project to ensure a good reuse of some basical components.
+Also, I used NextJS concepts to optimize page loading performance.
 
-**As your application can be used by millions of users, make sure to provide some robust safety guards.**
+## Pages
 
-### Sketches :
+There is 2 pages inside this app : 
 
-Obvisouly, it is up to you to make something nice and pretty, you are free to design it the way you like. The sketches are here to give you an idea on how it should look.
+- `index.tsx` (used as an homepage)
+- `conversation/[id].tsx` (used as the conversation details page, who redirect to not found page if conversation is not found or if user doesn't appear inside)
 
-<details>
-  <summary>Click to see the sketches</summary>
-  
-Mobile list :
+## API calls
 
-![](./sketches/list-mobile.jpg)
-
-Desktop list :
-
-![](./sketches/list-desktop.jpg)
-
-Mobile conversation :
-
-![](./sketches/conv-mobile.jpg)
-
-Desktop conversation :
-
-![](./sketches/conv-desktop.jpg)
-
-</details>
-
-### API :
-
-You can find the API swagger file in `docs/api-swagger.yaml`.
-
-For a better readibility, you can view it on [https://leboncoin.tech/frontend-technical-test/](https://leboncoin.tech/frontend-technical-test/).
-
----
-
-## Bonus 1 :
-
-We provide some conversation samples, but can you improve the app so the user can now create new conversations ?
-
-## Bonus 2 :
-
-Our infrastructure is a bit shaky.. Sometimes the servers are crashing. “It’s not you, it’s me”, but maybe you can display something nice to warn the user and handle it gracefully.
-
-## Do you want to make the app even better ?
-
-Feel free to make as many improvements as you like.
-We love creativity and technical challenges.
-
-If you are out of ideas, here are some thoughts :
-
-- As we want to reach our users anywhere, we need to make sure the app is performing well. What can you do to make it really fast ?
-
-- Our goal is to support everybody in the country, including people with disabilities. As a good citizen and a good developer, can you make sure the app is accessible for everyone ?
-
-- We all love to relax after a hard day’s work. It would be a shame if we didn’t feel confident enough about the upcoming automatic deployment. Are you sure everything has been tested thoroughly ?
+All API calls function are inside services/api folder.
+The API server URL configuration is under environment variable as `NEXT_PUBLIC_SERVER_URL`

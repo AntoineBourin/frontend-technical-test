@@ -1,0 +1,25 @@
+.message {
+    display: flex;
+    padding: 0 20px;
+    border-radius: 20px;
+    position: relative;
+    max-width: 70%;
+}
+
+.yours {
+    background-color: #2096F3;
+    color: white;
+    align-self: flex-end;
+}
+
+.other {
+    background-color: #E8E8EA;
+}
+
+.date {
+    position: absolute;
+    bottom: -23px;
+    color: black;
+    font-size: 9px;
+    right: 15px;
+}

@@ -1,0 +1,19 @@
+.main {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid rgb(183, 183, 183);
+    border-radius: 10px;
+    padding: 10px 80px 10px 20px;
+    position: relative;
+}
+
+.nickName {
+    margin-bottom: 0;
+}
+
+.time {
+    color: grey;
+    margin-top: 5px;
+    font-size: 12px;
+}
