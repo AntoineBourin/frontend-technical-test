@@ -22,5 +22,5 @@ There is 2 pages inside this app :
 
 ## API calls
 
-All API calls function are inside services/api folder.
+All API functions are inside services/api folder.
 The API server URL configuration is under environment variable as `NEXT_PUBLIC_SERVER_URL`

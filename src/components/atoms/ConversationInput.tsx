@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
-import { FC, FormEvent, useState } from 'react';
+import { FC, FormEvent, useRef, useState, useEffect } from 'react';
 import styles from '../../styles/ConversationInput.module.css';
 
 interface ConversationInputProps {
@@ -9,6 +9,13 @@ interface ConversationInputProps {
 
 const ConversationInput: FC<ConversationInputProps> = ({ handleMessageSent }) => {
     const [inputValue, setInputValue] = useState("");
+    const inputRef = useRef(null);
+
+    useEffect(() => {
+        if (inputRef) {
+            inputRef.current.focus();
+        }
+    }, [inputRef])
 
     const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
         event.preventDefault();
@@ -19,7 +26,7 @@ const ConversationInput: FC<ConversationInputProps> = ({ handleMessageSent }) =>
     return (
         <form onSubmit={handleSubmit} className={styles.form}>
             <input
-                data-testid="input"
+                ref={inputRef}
                 className={styles.input}
                 type="text"
                 value={inputValue}

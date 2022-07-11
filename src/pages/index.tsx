@@ -13,7 +13,6 @@ interface HomeProps {
 }
 
 const Home: FC<HomeProps> = ({ userId, userConversations }) => {
-  console.log(userId, userConversations);
   const year = new Date().getFullYear()
 
   return (
